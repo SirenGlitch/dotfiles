@@ -113,7 +113,7 @@ if ! shopt -oq posix; then
 fi
 [ -r /home/frazer/.config/byobu/prompt ] && . /home/frazer/.config/byobu/prompt   #byobu-prompt#
 
-export PATH="$PATH:/home/frazer/.local/bin:/home/frazer/.local/share/bob/nvim-bin"
+export PATH="$PATH:/home/frazer/.local/bin:/home/frazer/.local/share/bob/nvim-bin:/home/frazer/.nimble/bin"
 eval "$(thefuck --alias)"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash

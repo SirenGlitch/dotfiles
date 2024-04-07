@@ -13,5 +13,6 @@ alias jd-gui="java -jar /opt/jd-gui/jd-gui.jar"
 alias ddlc="/home/frazer/ddlc/DDLC.sh"
 alias renpy="/home/frazer/renpy-6.99.12.4-sdk/renpy.sh"
 alias vim="nvim"
-alias pip="pipx"
+alias protontricks='flatpak run com.github.Matoking.protontricks'
+alias protontricks-launch='flatpak run --command=protontricks-launch com.github.Matoking.protontricks'
 
