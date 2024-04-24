@@ -116,6 +116,9 @@ fi
 export PATH="$PATH:/home/frazer/.local/bin:/home/frazer/.local/share/bob/nvim-bin:/home/frazer/.nimble/bin"
 eval "$(thefuck --alias)"
 
+# make the nerdfont available to the chromebook terminal
+(cd ~/nerdfont; nohup python3 server.py > /dev/null 2> /dev/null & )
+
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 eval "$(zoxide init --cmd cd bash)"
