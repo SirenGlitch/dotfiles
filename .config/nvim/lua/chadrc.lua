@@ -11,9 +11,17 @@ M.ui = {
       fg = "lightbg",
       bg = "green",
     },
+    St_pos_sep = {
+      fg = "green",
+      bg = "statusline_bg",
+    },
     St_cwd_text = {
       fg = "lightbg",
       bg = "red",
+    },
+    St_cwd_sep = {
+      fg = "red",
+      bg = "statusline_bg"
     },
   },
   ---------- Nvchad_ui modules -----------
