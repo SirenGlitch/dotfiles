@@ -2,8 +2,9 @@
 local M = {}
 
 M.ui = {
+  ---------------- Base46 ----------------
   theme='catppuccin',
-
+  -- hl = highlights
   hl_override = {
 
     St_pos_text = {
@@ -15,7 +16,7 @@ M.ui = {
       bg = "red",
     },
   },
-
+  ---------- Nvchad_ui modules -----------
   statusline = {
     modules = {
       cwd = function()
