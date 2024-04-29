@@ -124,3 +124,6 @@ eval "$(thefuck --alias)"
 eval "$(starship init bash)"
 
 eval "$(zoxide init --cmd cd bash)"
+
+[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
+eval "$(atuin init bash)"
