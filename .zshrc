@@ -5,18 +5,15 @@ case $- in
 esac
 
 # don't put duplicate lines or lines starting with space in the history.
-HISTCONTROL=ignoreboth
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_SPACE
 
 # append to the history file, don't overwrite it
-shopt -s histappend
+setopt APPEND_HISTORY
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=1000
 HISTFILESIZE=2000
-
-# check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
-shopt -s checkwinsize
 
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
@@ -54,16 +51,30 @@ fi
 
 [ -r /home/frazer/.config/byobu/prompt ] && . /home/frazer/.config/byobu/prompt   #byobu-prompt#
 
+# Set a few Bash compatability options
+setopt BASH_REMATCH        # Make the =~ operator behave like in Bash, see `man zshoptions`
+setopt REMATCH_PCRE        # Make [[ "val" =~ ^pattern$ ]] use PCRE instead of ERE
+setopt INTERACTIVE_COMMENTS # Allow comments in interactive shells
+# >< KSH_ARRAYS can cause issues with some plugins, disable before loading problematic plugins then reenable
+setopt KSH_ARRAYS           # Make Arrays 0-indexed like Ken intended
+
 export PATH="$PATH:/home/frazer/.local/bin:/home/frazer/.local/share/bob/nvim-bin:/home/frazer/.nimble/bin"
 eval "$(thefuck --alias)"
 
 # make the nerdfont available to the chromebook terminal
 (cd ~/nerdfont; nohup python3 server.py > /dev/null 2> /dev/null & )
 
-# Set up fzf key bindings and fuzzy completion
-eval "$(fzf --zsh)"
-
+# Evaluate various TUI tools
 eval "$(starship init zsh)"
 
 eval "$(zoxide init --cmd cd zsh)"
+
+eval "$(atuin init zsh)"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Autostart tmux if not already in a session
+if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then
+    exec tmux new-session -A -s ${USER} >/dev/null 2>&1
+fi
 
