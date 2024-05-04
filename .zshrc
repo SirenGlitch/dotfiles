@@ -7,13 +7,24 @@ esac
 # don't put duplicate lines or lines starting with space in the history.
 setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_SPACE
+setopt SHARE_HISTORY
+
+# Use emacs keybindings even if our EDITOR is set to vi
+bindkey -e
+bindkey '^[[1;5C' emacs-forward-word
+bindkey '^[[1;5D' emacs-backward-word
 
 # append to the history file, don't overwrite it
 setopt APPEND_HISTORY
 
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+# Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
 HISTSIZE=1000
-HISTFILESIZE=2000
+SAVEHIST=1000
+HISTFILE=~/.zsh_history
+
+# Use modern completion system
+autoload -Uz compinit
+compinit
 
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
@@ -56,7 +67,7 @@ setopt BASH_REMATCH        # Make the =~ operator behave like in Bash, see `man 
 setopt REMATCH_PCRE        # Make [[ "val" =~ ^pattern$ ]] use PCRE instead of ERE
 setopt INTERACTIVE_COMMENTS # Allow comments in interactive shells
 # >< KSH_ARRAYS can cause issues with some plugins, disable before loading problematic plugins then reenable
-setopt KSH_ARRAYS           # Make Arrays 0-indexed like Ken intended
+# setopt KSH_ARRAYS           # Make Arrays 0-indexed like Ken intended
 
 export PATH="$PATH:/home/frazer/.local/bin:/home/frazer/.local/share/bob/nvim-bin:/home/frazer/.nimble/bin"
 eval "$(thefuck --alias)"
@@ -69,12 +80,13 @@ eval "$(starship init zsh)"
 
 eval "$(zoxide init --cmd cd zsh)"
 
-eval "$(atuin init zsh)"
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+eval "$(atuin init zsh --disable-up-arrow)"
+
+eval "$(sheldon source)"
 
 # Autostart tmux if not already in a session
 if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then
     exec tmux new-session -A -s ${USER} >/dev/null 2>&1
 fi
-
