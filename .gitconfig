@@ -1,7 +1,7 @@
 # This is Git's per-user configuration file.
 [user]
 	name = SirenGlitch
-	email = 110285018+SirenGlitch@users.noreply.github.com
+	email = frazerjamesrose@outlook.com
 	signingkey = 84D348804BFC0EBF
 [credential "https://github.com"]
 	helper = 
