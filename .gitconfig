@@ -2,6 +2,7 @@
 [user]
 	name = SirenGlitch
 	email = 110285018+SirenGlitch@users.noreply.github.com
+	signingkey = 84D348804BFC0EBF
 [credential "https://github.com"]
 	helper = 
 	helper = !/usr/bin/gh auth git-credential
@@ -10,5 +11,6 @@
 	helper = !/usr/bin/gh auth git-credential
 [commit]
 	template = /home/frazer/.gitmessage
+	gpgsign = true
 [init]
 	defaultBranch = main
