@@ -1,3 +1,67 @@
+# Specify prompt format
+format = """
+[┌───────────────────>](bold green)
+[├─> ](bold green)$shell$os
+[│](bold green)$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$hg_branch\
+$pijul_channel\
+$docker_context\
+$package\
+$c$cmake$cobol$daml$dart$deno$dotnet$elixir$elm$erlang$fennel$golang\
+$guix_shell$haskell$haxe$helm$java$julia$kotlin$gradle$lua$nim$nodejs$ocaml$opa\
+$perl$php$pulumi$purescript$python$quarto$raku$rlang$red$ruby$rust$scala\
+$solidity$swift$terraform$typst$vlang$vagrant$zig\
+$conda\
+$meson\
+$spack\
+$memory_usage\
+$aws\
+$gcloud\
+$openstack\
+$azure\
+$direnv\
+$env_var\
+$crystal\
+$custom\
+$sudo\
+$jobs\
+$battery\
+$status
+[│](bold green)
+[└─>](bold green) """
+
+# Specify config for the given modules
+[git_status]
+ahead = '⇡${count}'
+diverged = '⇕⇡${ahead_count}⇣${behind_count}'
+behind = '⇣${count}'
+modified = '*'
+staged = '[++\($count\)](green)'
+deleted = '${count}'
+stashed = ''
+renamed = '󰑕'
+
+[time]
+# disabled = false
+format = '🕙[ $time ]($style) '
+time_format = '%T'
+
+[os]
+disabled = false
+format = "on [($symbol$name )]($style)"
+style = "bold red"
+
+[shell]
+disabled = false
+style = "bold green"
+format = "[Sta](bold fg:198)[rs](bold fg:164)[hip](bold fg:128) [$indicator >_ ]($style)"
+
+# Specify icons for the given modules
 [aws]
 symbol = "  "
 
