@@ -78,6 +78,8 @@ eval "$(thefuck --alias)"
 # Evaluate various TUI tools
 eval "$(starship init zsh)"
 
+eval "$(starship completions zsh)"
+
 eval "$(zoxide init --cmd cd zsh)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
