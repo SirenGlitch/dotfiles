@@ -15,12 +15,16 @@ M.ui = {
       fg = "green",
       bg = "statusline_bg",
     },
+    St_cwd_icon = {
+      fg = "lightbg",
+      bg = "pink"
+    },
     St_cwd_text = {
       fg = "lightbg",
-      bg = "red",
+      bg = "pink",
     },
     St_cwd_sep = {
-      fg = "red",
+      fg = "pink",
       bg = "statusline_bg"
     },
   },
@@ -28,8 +32,9 @@ M.ui = {
   statusline = {
     modules = {
       cwd = function()
-        local icon = "%#St_cwd_icon#" .. "󰉋 "
+        local icon = "%#St_cwd_icon#" .. " "
         local name = vim.loop.cwd()
+        name = "%#St_cwd_text#" .. name
         return (vim.o.columns > 85 and ("%#St_cwd_sep#" .. "" .. icon .. name .. "%#St_cwd_sep#" .. "")) or ""
       end,
 
