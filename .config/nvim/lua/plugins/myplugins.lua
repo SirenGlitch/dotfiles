@@ -33,7 +33,7 @@ local plugins = {
       "mfussenegger/nvim-dap",
       "rcarriga/nvim-dap-ui",
     },
-    config = function (_, opts)
+    config = function (_)
       local path = "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
       require("dap-python").setup(path)
     end
@@ -47,6 +47,15 @@ local plugins = {
         "bash-debug-adapter", "stylua", "prettier", "marksman"
       },
     },
+  },
+  {
+    "echasnovski/mini-git",
+    version = false,
+    main = 'mini.git',
+    event = "BufRead",
+    config = function ()
+      require('mini.git').setup()
+    end
   },
 
 }
