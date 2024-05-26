@@ -16,16 +16,17 @@ return {
      end,
    },
 
-   {
-   	"williamboman/mason.nvim",
-   	opts = {
-   		ensure_installed = {
-   			"lua-language-server", "yaml-language-server", "pyright",
-        "dockerfile-language-server", "bash-language-server", "debugpy",
-        "bash-debug-adapter", "stylua", "prettier", "marksman"
-   		},
-   	},
-   },
+   -- Moved to myplugins.lua to follow intended syntax
+   -- {
+   	-- "williamboman/mason.nvim",
+   	-- opts = {
+   		-- ensure_installed = {
+   			-- "lua-language-server", "yaml-language-server", "pyright",
+        -- "dockerfile-language-server", "bash-language-server", "debugpy",
+        -- "bash-debug-adapter", "stylua", "prettier", "marksman"
+   		-- },
+   	-- },
+   -- },
 
    {
    	"nvim-treesitter/nvim-treesitter",
