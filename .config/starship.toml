@@ -57,7 +57,7 @@ format = '🕙[ $time ]($style) '
 time_format = '%T'
 
 [os]
-disabled = false
+# disabled = false
 format = "on [($symbol$name )]($style)"
 style = "bold red"
 
