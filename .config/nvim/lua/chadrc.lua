@@ -17,14 +17,14 @@ M.ui = {
     },
     St_cwd_icon = {
       fg = "lightbg",
-      bg = "pink"
+      bg = "red"
     },
     St_cwd_text = {
       fg = "lightbg",
-      bg = "pink",
+      bg = "red",
     },
     St_cwd_sep = {
-      fg = "pink",
+      fg = "red",
       bg = "statusline_bg"
     },
   },
