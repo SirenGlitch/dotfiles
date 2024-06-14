@@ -1,4 +1,3 @@
-alias firefox="flatpak run org.mozilla.firefox"
 alias jar="/usr/java/jdk-17.0.5/bin/java -jar"
 alias adb="/home/frazer/platform-tools/adb"
 alias prism="flatpak run org.prismlauncher.PrismLauncher"
