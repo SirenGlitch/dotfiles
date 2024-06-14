@@ -1,5 +1,5 @@
 theme = "catppuccin-mocha"
-client_id = "65b708073fc0480ea92a077233ca87bd"
+client_id = "a7cc2f065292475c9390bf7c5b9bdf72"
 client_port = 8080
 playback_format = """
 {track} • {artists}
@@ -19,10 +19,10 @@ playback_window_width = 6
 enable_media_control = true
 enable_streaming = "Always"
 enable_cover_image_cache = true
-default_device = "spotify-player"
+default_device = "Terminal"
 
 [device]
-name = "spotify-player"
+name = "Terminal"
 device_type = "speaker"
 volume = 70
 bitrate = 320
