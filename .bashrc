@@ -128,3 +128,5 @@ eval "$(zoxide init --cmd cd bash)"
 [[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
 eval "$(atuin init bash)"
 . "$HOME/.cargo/env"
+
+. "$HOME/.atuin/bin/env"
