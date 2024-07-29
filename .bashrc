@@ -121,7 +121,7 @@ eval "$(thefuck --alias)"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-eval "$(starship init bash)"
+eval "$(oh-my-posh init bash --config $HOME/.config/ohmyposh/base.toml)"
 
 eval "$(zoxide init --cmd cd bash)"
 

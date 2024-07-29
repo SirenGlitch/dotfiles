@@ -94,7 +94,7 @@ eval "$(thefuck --alias)"
 (cd ~/nerdfont; nohup python3 server.py > /dev/null 2> /dev/null & )
 
 # Evaluate various TUI tools
-eval "$(starship init zsh)"
+eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/base.toml)"
 
 eval "$(zoxide init --cmd cd zsh)"
 
