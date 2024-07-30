@@ -1,7 +1,7 @@
 alias jar="/usr/java/jdk-17.0.5/bin/java -jar"
 alias adb="/home/frazer/platform-tools/adb"
 alias prism="flatpak run org.prismlauncher.PrismLauncher"
-alias nf="neofetch"
+alias nf="nerdfetch"
 alias flatseal="flatpak run com.github.tchx84.Flatseal"
 alias cmd="wine cmd"
 alias explorer="wine explorer"
