@@ -87,7 +87,7 @@ setopt INTERACTIVE_COMMENTS # Allow comments in interactive shells
 # >< KSH_ARRAYS can cause issues with some plugins, disable before loading problematic plugins then reenable
 # setopt KSH_ARRAYS           # Make Arrays 0-indexed like Ken intended
 
-export PATH="$PATH:/home/frazer/.local/bin:/home/frazer/.local/share/bob/nvim-bin:/home/frazer/.nimble/bin"
+export PATH="$PATH:/home/frazer/.local/bin:/home/frazer/.local/share/bob/nvim-bin:/home/frazer/.nimble/bin:/usr/local/go/bin:/home/frazer/go/bin"
 eval "$(thefuck --alias)"
 
 # make the nerdfont available to the chromebook terminal
