@@ -1,9 +1,9 @@
 ---@type ChadrcConfig
-local M = {}
 
-M.ui = {
-  ---------------- Base46 ----------------
-  theme='catppuccin',
+local M = {}
+---------------- Base46 ----------------
+M.base46 = {
+  theme = "catppuccin",
   -- hl = highlights
   hl_override = {
 
@@ -17,7 +17,7 @@ M.ui = {
     },
     St_cwd_icon = {
       fg = "lightbg",
-      bg = "red"
+      bg = "red",
     },
     St_cwd_text = {
       fg = "lightbg",
@@ -25,23 +25,27 @@ M.ui = {
     },
     St_cwd_sep = {
       fg = "red",
-      bg = "statusline_bg"
+      bg = "statusline_bg",
     },
   },
-  ---------- Nvchad_ui modules -----------
+}
+
+---------- Nvchad_ui modules -----------
+M.ui = {
   statusline = {
     modules = {
       cwd = function()
         local icon = "%#St_cwd_icon#" .. " "
-        local name = vim.loop.cwd()
+        local name = vim.uv.cwd()
         name = "%#St_cwd_text#" .. name
         return (vim.o.columns > 85 and ("%#St_cwd_sep#" .. "" .. icon .. name .. "%#St_cwd_sep#" .. "")) or ""
       end,
 
       cursor = function()
-       return "%#St_pos_sep#" .. "" .. "%#St_pos_icon# %#St_pos_text# %p %% " .. "%#St_pos_sep#" .. ""
-      end
+        return "%#St_pos_sep#" .. "" .. "%#St_pos_icon# %#St_pos_text# %p %% " .. "%#St_pos_sep#" .. ""
+      end,
     },
+  },
   },
 }
 
