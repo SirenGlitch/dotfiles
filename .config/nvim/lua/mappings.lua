@@ -1,4 +1,5 @@
 require "nvchad.mappings"
+require "configs.lazy-mappings"
 
 -- add yours here
 
