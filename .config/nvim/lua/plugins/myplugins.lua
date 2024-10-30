@@ -133,14 +133,5 @@ local plugins = {
     "williamboman/mason.nvim",
     opts = {},
   },
-  {
-    "echasnovski/mini-git",
-    version = false,
-    main = "mini.git",
-    event = "BufRead",
-    config = function()
-      require("mini.git").setup()
-    end,
-  },
 }
 return plugins
