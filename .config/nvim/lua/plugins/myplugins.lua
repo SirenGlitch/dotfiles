@@ -1,7 +1,10 @@
 local plugins = {
   {
-    "thinca/vim-quickrun",
-    event = "BufRead"
+    "is0n/jaq-nvim",
+    event = "BufRead",
+    config = function()
+      require "configs.jaq-nvim"
+    end,
   },
   {
     "rcarriga/nvim-dap-ui",
