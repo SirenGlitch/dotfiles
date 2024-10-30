@@ -42,14 +42,8 @@ local plugins = {
     end
   },
   {
-   "williamboman/mason.nvim",
-    opts = {
-      ensure_installed = {
-        "lua-language-server", "yaml-language-server", "pyright",
-        "dockerfile-language-server", "bash-language-server", "debugpy",
-        "bash-debug-adapter", "stylua", "prettier", "marksman"
-      },
-    },
+    "williamboman/mason.nvim",
+    opts = {},
   },
   {
     "echasnovski/mini-git",
