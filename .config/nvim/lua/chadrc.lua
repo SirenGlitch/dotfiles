@@ -52,6 +52,24 @@ M.ui = {
 M.nvdash = {
   load_on_startup = true,
 }
+
+M.mason = {
+  cmd = true,
+  pkgs = {
+    "lua-language-server",
+    "yaml-language-server",
+    "pyright",
+    "dockerfile-language-server",
+    "bash-language-server",
+    "debugpy",
+    "bash-debug-adapter",
+    "stylua",
+    "prettier",
+    "marksman",
+    "rust-analyzer",
+    "mypy",
+    "ruff",
+    "black",
   },
 }
 
