@@ -140,16 +140,6 @@ final_space = true
       fetch_virtual_env = false
 
   [[blocks.segments]]
-    template = 'in <p:lime><b>{{ .Name }}</b></> '
-    foreground = 'p:white'
-    background = 'transparent'
-    type = 'shell'
-    style = 'plain'
-
-    [blocks.segments.properties]
-      cache_duration = 'none'
-
-  [[blocks.segments]]
     leading_diamond = ''
     trailing_diamond = ''
     template = ' <p:white></> {{ .FormattedMs }} '
