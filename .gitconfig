@@ -2,7 +2,7 @@
 [user]
 	name = SirenGlitch
 	email = frazerjamesrose@outlook.com
-	signingkey = 84D348804BFC0EBF
+	signingkey = 6BAE8B9945374050
 [credential "https://github.com"]
 	helper = 
 	helper = !/usr/bin/gh auth git-credential
