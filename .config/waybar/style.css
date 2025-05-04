@@ -244,6 +244,8 @@ label:focus {
 #custom-power {
     background-color: @red;
     color: @crust;
+    border-radius: 15px 15px 15px 15px;
+    padding: 0px 3px 0px 3px;
 }
 
 #temperature {
