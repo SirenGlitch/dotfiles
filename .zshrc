@@ -13,6 +13,7 @@ setopt SHARE_HISTORY
 bindkey -e
 bindkey '^[[1;5C' emacs-forward-word
 bindkey '^[[1;5D' emacs-backward-word
+bindkey -r '^T'
 
 # append to the history file, don't overwrite it
 setopt APPEND_HISTORY
