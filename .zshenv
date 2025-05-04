@@ -13,5 +13,4 @@
   export FZF_ALT_C_OPTS=" \
     --walker-skip .git,node_modules,target \
     --preview 'tree -C {}'" 
-  . "$HOME/.atuin/bin/env"
   source "$HOME/.fzf-git.sh/fzf-git.sh"
