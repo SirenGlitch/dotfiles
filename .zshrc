@@ -90,9 +90,6 @@ setopt INTERACTIVE_COMMENTS # Allow comments in interactive shells
 export PATH="$PATH:/home/frazer/.local/bin:/home/frazer/.local/share/bob/nvim-bin:/home/frazer/.nimble/bin:/usr/local/go/bin:/home/frazer/go/bin"
 eval "$(thefuck --alias)"
 
-# make the nerdfont available to the chromebook terminal
-(cd ~/nerdfont; nohup python3 server.py > /dev/null 2> /dev/null & )
-
 # Evaluate various TUI tools
 eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/base.toml)"
 
