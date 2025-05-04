@@ -14,4 +14,4 @@
     --walker-skip .git,node_modules,target \
     --preview 'tree -C {}'" 
   . "$HOME/.atuin/bin/env"
-  source "$HOME/fzf-git.sh/fzf-git.sh"
+  source "$HOME/.fzf-git.sh/fzf-git.sh"
