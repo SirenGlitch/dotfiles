@@ -8,22 +8,23 @@ window {
 }
 
 button {
-    border-radius: 0;
-    border-color: #fab387;
-	text-decoration-color: #cdd6f4;
-    color: #cdd6f4;
-	background-color: #181825;
-	border-style: solid;
-	border-width: 1px;
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: 25%;
+  border-radius: 25px 25px 25px 25px;
+  border-color: #fab387;
+  text-decoration-color: #cdd6f4;
+  color: #cdd6f4;
+  background-color: #181825;
+  border-style: solid;
+  border-width: 2px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 25%;
+  padding: 0px 5px 0px 5px;
 }
 
 button:focus, button:active, button:hover {
   /* 20% Overlay 2, 80% mantle*/
-	background-color: rgb(48,50,66);
-	outline-style: none;
+  background-color: rgb(48,50,66);
+  outline-style: none;
 }
 
 #lock {
@@ -38,8 +39,8 @@ button:focus, button:active, button:hover {
     background-image: url("/home/frazer/.config/wlogout/suspend.svg");
 }
 
-#hibernate {
-    background-image: url("/home/frazer/.config/wlogout/hibernate.svg");
+#reload {
+    background-image: url("/home/frazer/.config/wlogout/reboot.svg");
 }
 
 #shutdown {
