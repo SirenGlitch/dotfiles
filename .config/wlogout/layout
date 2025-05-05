@@ -5,10 +5,10 @@
     "keybind" : "l"
 }
 {
-    "label" : "hibernate",
-    "action" : "systemctl hibernate",
-    "text" : "Hibernate",
-    "keybind" : "h"
+    "label" : "reload",
+    "action" : "killall -SIGUSR2 waybar",
+    "text" : "Reload Waybar",
+    "keybind" : "w"
 }
 {
     "label" : "logout",
