@@ -102,11 +102,4 @@ eval "$(atuin init zsh --disable-up-arrow)"
 
 eval "$(sheldon source)"
 
-# # This is borderline stupid in it's current state
-# # Auto-attaches to any existing session
-# # Making it nearly impossible to have more than one session at once
-#
-# # Autostart tmux if not already in a session
-# if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then
-#     exec tmux new-session -A -s ${USER} >/dev/null 2>&1
-# fi
+fastfetch
