@@ -2,13 +2,13 @@
 
 * {
   selected-active-foreground:  @background;
-  lightfg:                     @text;
-  separatorcolor:              @foreground;
+  lightfg:                     @peach;
+  separatorcolor:              @peach;
   urgent-foreground:           @red;
   alternate-urgent-background: @lightbg;
   lightbg:                     @mantle;
   background-color:            transparent;
-  border-color:                @foreground;
+  border-color:                @peach;
   normal-background:           @background;
   selected-urgent-background:  @red;
   alternate-active-background: @lightbg;
