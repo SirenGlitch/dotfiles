@@ -141,6 +141,7 @@ label:focus {
 #pulseaudio.muted {
     background-color: alpha(@base, 0.5);
     color: @teal;
+    padding-right: 15px;
 }
 
 #pulseaudio.muted:hover {
@@ -179,6 +180,10 @@ label:focus {
     color: @crust;
     padding: 0 13px 0 10px;
     margin-right: 3;
+}
+
+#custom-power:hover {
+  background-color: @red;
 }
 
 #tray {
