@@ -1,12 +1,12 @@
 [[plugin.deps]]
 use = "yazi-rs/plugins:git"
-rev = "864a021"
-hash = "e0ada736ea676c2bbb3ec705a49526ef"
+rev = "63f9650"
+hash = "bf6f074cd41ee33c3360341d168f9733"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:full-border"
-rev = "864a021"
-hash = "1f3dad061209081a6b04dd6ff2cb06c7"
+rev = "63f9650"
+hash = "3996fc74044bc44144b323686f887e1"
 
 [[plugin.deps]]
 use = "Lil-dank/lazygit"
@@ -15,10 +15,10 @@ hash = "a1fa2b3e1826c3a34804ea8c548e9f80"
 
 [[plugin.deps]]
 use = "saumyajyoti/omp"
-rev = "25024ce"
-hash = "e74a540e76177278e22e6ab6b1082043"
+rev = "41f7e89"
+hash = "79c7c499488da445c97cc8eb252c3b2a"
 
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-mocha"
-rev = "68326b4"
-hash = "2ac87e1b3a61f5887472899e86535d29"
+rev = "d04a298"
+hash = "288a0dedd5d13b28605cf82c05326dcd"
