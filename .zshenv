@@ -14,3 +14,7 @@
     --walker-skip .git,node_modules,target \
     --preview 'tree -C {}'" 
   source "$HOME/.fzf-git.sh/fzf-git.sh"
+  export MANPAGER="less -R --use-color -Dd+r -Du+b" # colored man pages
+
+  # colored less
+  export LESS="R --use-color -Dd+r -Du+b"
