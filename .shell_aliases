@@ -2,6 +2,7 @@ alias \
 \
 c="clear" \
 v="nvim" \
+y="yazi" \
 df="df -h" \
 cat="bat" \
 cp="cpg -g" \
