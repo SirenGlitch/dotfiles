@@ -102,4 +102,7 @@ eval "$(atuin init zsh --disable-up-arrow)"
 
 eval "$(sheldon source)"
 
+# Use direct path to cat, alias to bat happens @L62
+(/usr/bin/cat ~/.cache/wal/sequences &)
+
 fastfetch

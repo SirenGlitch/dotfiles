@@ -1,5 +1,8 @@
+@import '../../.cache/wal/colors-wlogout.css';
+
 * {
 	background-image: none;
+  transition: 20ms;
 	box-shadow: none;
 }
 
@@ -8,11 +11,10 @@ window {
 }
 
 button {
-  border-radius: 25px 25px 25px 25px;
-  border-color: #fab387;
-  text-decoration-color: #cdd6f4;
-  color: #cdd6f4;
-  background-color: #181825;
+  border-radius: 150px 150px 150px 150px;
+  border-color: @color11;
+  color: @foreground;
+  background-color: @background;
   border-style: solid;
   border-width: 2px;
   background-repeat: no-repeat;
@@ -22,31 +24,30 @@ button {
 }
 
 button:focus, button:active, button:hover {
-  /* 20% Overlay 2, 80% mantle*/
   background-color: rgb(48,50,66);
   outline-style: none;
 }
 
 #lock {
-    background-image: url("/home/frazer/.config/wlogout/lock.svg");
+    background-image: url("../../.cache/wal/lock.svg");
 }
 
 #logout {
-    background-image: url("/home/frazer/.config/wlogout/logout.svg");
+    background-image: url("../../.cache/wal/logout.svg");
 }
 
 #suspend {
-    background-image: url("/home/frazer/.config/wlogout/suspend.svg");
+    background-image: url("../../.cache/wal/suspend.svg");
 }
 
 #reload {
-    background-image: url("/home/frazer/.config/wlogout/reboot.svg");
+    background-image: url("../../.cache/wal/reboot.svg");
 }
 
 #shutdown {
-    background-image: url("/home/frazer/.config/wlogout/shutdown.svg");
+    background-image: url("../../.cache/wal/shutdown.svg");
 }
 
 #reboot {
-    background-image: url("/home/frazer/.config/wlogout/reboot.svg");
+    background-image: url("../../.cache/wal/reboot.svg");
 }

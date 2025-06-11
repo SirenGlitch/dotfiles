@@ -1,4 +1,8 @@
-@theme "catppuccin-default"
+/* Dark theme */
+@import "~/.cache/wal/colors-rofi-dark"
+
+/* Light theme */
+// @import "~/.cache/wal/colors-rofi-light"
 
 /* Parts taken from adi1090x/rofi type-1 style-7 */
 
