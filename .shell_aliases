@@ -7,4 +7,5 @@ df="df -h" \
 cat="bat" \
 cp="cpg -g" \
 mv="mvg -g" \
-sd="(cd ~/.dotfiles && stow .)"
+sd="(cd ~/.dotfiles && stow .)" \
+lg="lazygit"
