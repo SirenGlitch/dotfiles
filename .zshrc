@@ -45,23 +45,6 @@ zstyle ':completion:*' verbose true
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
-# set variable identifying the chroot you work in (used in the prompt below)
-if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
-    debian_chroot=$(cat /etc/debian_chroot)
-fi
-
-# set a fancy prompt (non-color, unless we know we "want" color)
-case "$TERM" in
-    xterm-color|*-256color) color_prompt=yes;;
-esac
-
-if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-fi
-unset color_prompt force_color_prompt
-
 # enable color support and human readable filesizes within ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -79,8 +62,6 @@ if [ -f ~/.shell_aliases ]; then
     . ~/.shell_aliases
 fi
 
-[ -r /home/frazer/.config/byobu/prompt ] && . /home/frazer/.config/byobu/prompt   #byobu-prompt#
-
 # Set a few Bash compatability options
 setopt BASH_REMATCH        # Make the =~ operator behave like in Bash, see `man zshoptions`
 setopt REMATCH_PCRE        # Make [[ "val" =~ ^pattern$ ]] use PCRE instead of ERE
@@ -88,7 +69,7 @@ setopt INTERACTIVE_COMMENTS # Allow comments in interactive shells
 # >< KSH_ARRAYS can cause issues with some plugins, disable before loading problematic plugins then reenable
 # setopt KSH_ARRAYS           # Make Arrays 0-indexed like Ken intended
 
-export PATH="$PATH:/home/frazer/.local/bin:/home/frazer/.local/share/bob/nvim-bin:/home/frazer/.nimble/bin:/usr/local/go/bin:/home/frazer/go/bin"
+export PATH="$PATH:/home/frazer/.local/bin:/usr/local/go/bin:/home/frazer/go/bin:/home/frazer/scripts"
 eval "$(thefuck --alias)"
 
 # Evaluate various TUI tools
