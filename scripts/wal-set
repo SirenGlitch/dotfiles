@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+reload_gtk_theme() {
+  theme=$(gsettings get org.gnome.desktop.interface gtk-theme)
+  gsettings set org.gnome.desktop.interface gtk-theme ''
+  sleep 0.01
+  gsettings set org.gnome.desktop.interface gtk-theme $theme
+}
+
+pywalfox update
+walcord
+
+(cd ~/.cache/wal/ && nohup python3 -m http.server 8080 > /dev/null 2> /dev/null &)
+
+~/scripts/theme_parse pywal > ~/.config/spotify-player/theme.toml
+/opt/oomox/plugins/theme_oomox/change_color.sh -o oomox-pywal -d false ~/.cache/wal/colors-oomox
+
+reload_gtk_theme
