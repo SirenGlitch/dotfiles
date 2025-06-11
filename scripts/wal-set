@@ -13,6 +13,7 @@ walcord
 (cd ~/.cache/wal/ && nohup python3 -m http.server 8080 > /dev/null 2> /dev/null &)
 
 ~/scripts/theme_parse pywal > ~/.config/spotify-player/theme.toml
+kill -15 `pgrep -f 'python3 -m http.server 8080'`
 /opt/oomox/plugins/theme_oomox/change_color.sh -o oomox-pywal -d false ~/.cache/wal/colors-oomox
 
 reload_gtk_theme
