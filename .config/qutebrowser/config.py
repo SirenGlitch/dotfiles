@@ -25,8 +25,9 @@ for k, v in dict_attrs(yaml_data):
 c.aliases["cs"] = "config-source"
 
 # Bindings
-config.bind(",m", "spawn mpv {url}")
-config.bind(",M", "hint links spawn mpv {hint-url}")
+config.bind(",m", "spawn umpv {url}")
+config.bind(",M", "hint links spawn umpv {hint-url}")
+config.bind(";M", "hint --rapid links spawn umpv {hint-url}")
 
 c.tabs.title.format = "{audio}{current_title}"
 c.tabs.show = "multiple"
