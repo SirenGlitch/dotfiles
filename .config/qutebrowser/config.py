@@ -29,6 +29,9 @@ config.bind(",m", "spawn umpv {url}")
 config.bind(",M", "hint links spawn umpv {hint-url}")
 config.bind(";M", "hint --rapid links spawn umpv {hint-url}")
 
+# spellchecking
+c.spellcheck.languages = ["en-GB"]
+
 c.tabs.title.format = "{audio}{current_title}"
 c.tabs.show = "multiple"
 c.fonts.web.size.default = 16
