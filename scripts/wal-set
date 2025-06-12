@@ -16,4 +16,7 @@ walcord
 kill -15 `pgrep -f 'python3 -m http.server 8080'`
 /opt/oomox/plugins/theme_oomox/change_color.sh -o oomox-pywal -d false ~/.cache/wal/colors-oomox
 
+~/scripts/qutebrowser_reload.py
+
+# Make sure this is always at the end (takes decades)
 reload_gtk_theme
