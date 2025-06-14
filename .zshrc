@@ -70,7 +70,6 @@ setopt INTERACTIVE_COMMENTS # Allow comments in interactive shells
 # setopt KSH_ARRAYS           # Make Arrays 0-indexed like Ken intended
 
 export PATH="$PATH:/home/frazer/.local/bin:/usr/local/go/bin:/home/frazer/go/bin:/home/frazer/scripts"
-eval "$(thefuck --alias)"
 
 # Evaluate various TUI tools
 eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/base.toml)"
