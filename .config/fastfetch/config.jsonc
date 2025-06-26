@@ -92,7 +92,7 @@
       "key": "   Disk     ", // {mountpoint} in here if below ever happens
       "keyColor": "cyan",
       "keyWidth": 16, //For future: feat request that keyWidth can remove or add trailing whitespace to match width
-      "format": "{1} / {2} ({6}) - {20}"
+      "format": "{1} / {2} ({3}) - {20}"
     },
     {
       "type": "battery",
