@@ -24,10 +24,20 @@ for k, v in dict_attrs(yaml_data):
 # Aliases
 c.aliases["cs"] = "config-source"
 
+# Hint groups
+c.hints.selectors["code"] = [
+    # Selects all code tags whose parent is not a pre tag
+    ":not(pre) > code",
+    "pre",
+]
+
 # Bindings
 config.bind(",m", "spawn umpv {url}")
 config.bind(",M", "hint links spawn umpv {hint-url}")
 config.bind(";M", "hint --rapid links spawn umpv {hint-url}")
+config.bind("sd", "spawn --userscript open_download")
+config.bind("gc", "spawn --userscript gitclone")
+config.bind(";c", "hint code userscript code_select.py")
 
 # spellchecking
 c.spellcheck.languages = ["en-GB"]

@@ -1,0 +1,66 @@
+#!/bin/sh
+#
+# Author: palb91
+# Date:   2022
+#
+# Clone a git repository directly from qutebrowser
+#
+# In config.py:
+#   bind('gc', 'spawn -u -- gitclone')
+#
+#   # Run a shell command after successful clone
+#   import os
+#   os.environ['QUTE_POST_CLONE'] = 'notify-send "git clone" "${QUTE_URL}"'
+
+set -e
+
+# Local storage
+BASE_DIR="${HOME}"/usr/src
+TEMP_DIR="$(mktemp -d)"
+
+# Get informations from userscripts variables
+QUTE_URL="${QUTE_URL%%\#*}"
+QUTE_URL="${QUTE_URL%%\?*}"
+QUTE_URL="${QUTE_URL%%\&*}"
+
+DOMAIN="${QUTE_URL#*//}"
+DOMAIN="${DOMAIN%%/*}"
+
+REPO="${QUTE_URL#*"${DOMAIN}"/}"
+REPO="${REPO%/}"
+
+BASE_REPO="${BASE_DIR}/${DOMAIN}/${REPO}"
+TEMP_REPO="${TEMP_DIR}/${DOMAIN}/${REPO}"
+
+# logging
+info()  { printf 'message-info    "%s"\n' "${*}" >>"${QUTE_FIFO}"; }
+warn()  { printf 'message-warning "%s"\n' "${*}" >>"${QUTE_FIFO}"; }
+err()   { printf 'message-error   "%s"\n' "${*}" >>"${QUTE_FIFO}"; return 1; }
+clean() { rm -rf "${TEMP_DIR}"; exit "${1:-0}"; }
+
+# Check repo exists
+if [ -d "${BASE_REPO}"/.git ]; then
+    warn "${REPO} already cloned in ${BASE_REPO}"
+    clean 0
+
+# Try cloning
+else
+    info "Cloning ${DOMAIN}/${REPO}..."
+    git clone "${QUTE_URL}" "${TEMP_REPO}" \
+        || err "Error while cloning ${DOMAIN}/${REPO}, is it a repository?"
+
+    if [ ! -d "${TEMP_REPO}"/.git ]; then
+        err 'An error occured, cloning failed...'
+        clean 2
+    fi
+fi
+
+# Move the temp folder to its final destination
+[ -d "${BASE_REPO%/*}" ] || mkdir -p "${BASE_REPO%/*}"
+mv "${TEMP_REPO}" "${BASE_REPO}"
+info "${REPO} successfully cloned in ${BASE_REPO}"
+
+# Run post hook
+if [ -n "${QUTE_POST_CLONE}" ]; then
+    eval "${QUTE_POST_CLONE}"
+fi
