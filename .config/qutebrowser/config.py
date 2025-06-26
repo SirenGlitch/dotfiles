@@ -67,6 +67,7 @@ c.colors.webpage.darkmode.enabled = True
 c.colors.webpage.darkmode.algorithm = "lightness-cielab"
 c.colors.webpage.darkmode.policy.images = "never"
 config.set("colors.webpage.darkmode.enabled", False, "file://*")
+config.set("colors.webpage.darkmode.enabled", False, "*.sparx-learning.com/*")
 
 # styles, cosmetics
 c.tabs.padding = {"top": 5, "bottom": 5, "left": 9, "right": 9}
