@@ -19,7 +19,7 @@
     ],
     "modules-right": [
         "pulseaudio",
-        "cpu",
+        "network",
         "backlight",
         "keyboard-state",
         "battery",
@@ -137,11 +137,13 @@
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "interval": 5,
-        "format-wifi": " {bandwidthUpBits}  {bandwidthDownBits} ",
+        "format-wifi": "  {ipaddr}",
+        // "format-wifi": " {bandwidthUpBits}  {bandwidthDownBits} ",
         "format-ethernet": "{ipaddr}/{cidr} ",
         "tooltip-format": "{essid} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠"
+        "format-disconnected": "Disconnected ⚠",
+        "on-click": "nm-connection-editor"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
