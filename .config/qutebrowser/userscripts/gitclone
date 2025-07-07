@@ -15,7 +15,7 @@
 set -e
 
 # Local storage
-BASE_DIR="${HOME}"/usr/src
+BASE_DIR="${HOME}"/clone
 TEMP_DIR="$(mktemp -d)"
 
 # Get informations from userscripts variables
