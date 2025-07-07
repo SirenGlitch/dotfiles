@@ -22,6 +22,7 @@ Singleton {
     property bool firstLoad: true
     property bool preventNextLoad: false
     property var preventNextNotification: false
+    property bool firstFileError: true
 
     function loadConfig() {
         configFileView.reload()
@@ -44,8 +45,9 @@ Singleton {
         } catch (e) {
             console.error("[ConfigLoader] Error reading file:", e);
             console.log("[ConfigLoader] File content was:", fileContent);
-            Quickshell.execDetached(["bash", "-c", `notify-send '${qsTr("Shell configuration failed to load")}' '${root.filePath}'`])
+            Hyprland.dispatch(`exec notify-send "${qsTr("Shell configuration failed to load")}" "${root.filePath}"`)
             return;
+
         }
     }
 
@@ -81,7 +83,7 @@ Singleton {
 
     function saveConfig() {
         const plainConfig = ObjectUtils.toPlainObject(ConfigOptions)
-        Quickshell.execDetached(["bash", "-c", `echo '${StringUtils.shellSingleQuoteEscape(JSON.stringify(plainConfig, null, 2))}' > '${FileUtils.trimFileProtocol(root.filePath)}'`])
+        Hyprland.dispatch(`exec echo '${StringUtils.shellSingleQuoteEscape(JSON.stringify(plainConfig, null, 2))}' > '${root.filePath}'`)
     }
 
     function setConfigValueAndSave(nestedKey, value, preventNextNotification = true) {
@@ -104,7 +106,7 @@ Singleton {
             } else {
                 root.applyConfig(configFileView.text())
                 if (!root.preventNextNotification) {
-                    // Quickshell.execDetached(["bash", "-c", `notify-send '${qsTr("Shell configuration reloaded")}' '${root.filePath}'`])
+                    // Hyprland.dispatch(`exec notify-send "${qsTr("Shell configuration reloaded")}" "${root.filePath}"`)
                 } else {
                     root.preventNextNotification = false;
                 }
@@ -112,7 +114,16 @@ Singleton {
         }
     }
 
-	FileView { 
+    Timer{
+        id: delayedFileView
+        interval: ConfigOptions.hacks.arbitraryRaceConditionDelay
+        running: false
+        onTriggered: {
+            configFileView.onFileChanged();
+        }
+    }
+
+	FileView {
         id: configFileView
         path: Qt.resolvedUrl(root.filePath)
         watchChanges: true
@@ -126,11 +137,18 @@ Singleton {
         }
         onLoadFailed: (error) => {
             if(error == FileViewError.FileNotFound) {
-                console.log("[ConfigLoader] File not found, creating new file.")
-                root.saveConfig()
-                Quickshell.execDetached(["bash", "-c", `notify-send '${qsTr("Shell configuration created")}' '${root.filePath}'`])
+                if(firstFileError){
+                    console.log("[ConfigLoader] File not found, trying again.")
+                    firstFileError = false
+                    delayedFileView.start()
+                } else {
+                    console.log("[ConfigLoader] File not found, creating new file.")
+                    firstFileError = true
+                    root.saveConfig()
+                    Hyprland.dispatch(`exec notify-send "${qsTr("Shell configuration created")}" "${root.filePath}"`)
+                }
             } else {
-                Quickshell.execDetached(["bash", "-c", `notify-send '${qsTr("Shell configuration failed to load")}' '${root.filePath}'`])
+                Hyprland.dispatch(`exec notify-send "${qsTr("Shell configuration failed to load")}" "${root.filePath}"`)
             }
         }
     }

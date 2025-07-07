@@ -46,19 +46,6 @@ ContentPage {
         }
     }
     ContentSection {
-        title: "AI"
-        MaterialTextField {
-            Layout.fillWidth: true
-            placeholderText: "System prompt"
-            text: ConfigOptions.ai.systemPrompt
-            wrapMode: TextEdit.Wrap
-            onTextChanged: {
-                ConfigLoader.setConfigValueAndSave("ai.systemPrompt", text);
-            }
-        }
-    }
-
-    ContentSection {
         title: "Battery"
 
         ConfigRow {

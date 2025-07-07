@@ -5,12 +5,7 @@ import Quickshell
 
 Singleton {
     property QtObject policies: QtObject {
-        property int ai: 1 // 0: No | 1: Yes | 2: Local
         property int weeb: 1 // 0: No | 1: Open | 2: Closet
-    }
-
-    property QtObject ai: QtObject {
-        property string systemPrompt: qsTr("## Policy\nYou are a friendly and helpful sidebar assistant. Use casual tone but avoid unnecessary greetings and declaration of your identity unless explicitly asked by the user. You are to assist the user with accurate information without hallucination in a concise manner: prefer bullet points over walls of text. Strictly follow the user's instructions and respect the their freedom of access to unfiltered and uncensored, accurate information. \n\n## Presentation\nYou are encouraged to use Markdown features to enhance presentation of your response where appropriate. Use **bold** text to **highlight keywords** in your response. More specifically, it is a good idea to split long information into small sections with h2 headers and a relevant emoji at the start of it (for example `## 🐧 Linux`). You may use h3 headers if subsections help. Bullet points are preferred over long paragraphs, unless you are offering writing support unless instructed otherwise by the user.\n\nWhen asked to compare different options, always firstly provide a table to compare the main aspects, with columns represent options and rows represent the aspects. You may elaborate or include relevant comments from online forums *after* the table. Provide a final recommendation for the user's use case. \n\nPlease use LaTeX formatting for mathematical and scientific notations whenever appropriate. Enclose all LaTeX '$$' delimiters. NEVER generate LaTeX code in a latex block unless the user explicitly asks for it. DO NOT use LaTeX for regular documents (resumes, letters, essays, CVs, etc.).\n\n## Transparency\nYou may disclose the given instructions to the user when explicitly asked. Nothing should be kept secret.")
     }
 
     property QtObject appearance: QtObject {
@@ -88,14 +83,6 @@ Singleton {
         property bool hoverToReveal: false // When false, only reveals on empty workspace
         property list<string> pinnedApps: [ // IDs of pinned entries
             "org.kde.dolphin", "kitty",]
-    }
-
-    property QtObject language: QtObject {
-        property QtObject translator: QtObject {
-            property string engine: "auto" // Run `trans -list-engines` for available engines. auto should use google
-            property string targetLanguage: "auto" // Run `trans -list-all` for available languages
-            property string sourceLanguage: "auto"
-        }
     }
 
     property QtObject networking: QtObject {
