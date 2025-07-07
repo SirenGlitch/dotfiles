@@ -1,0 +1,129 @@
+{
+  "policies": {
+    "weeb": 1
+  },
+  "appearance": {
+    "fakeScreenRounding": 2,
+    "transparency": true,
+    "palette": {
+      "type": "auto"
+    }
+  },
+  "audio": {
+    "protection": {
+      "enable": true,
+      "maxAllowedIncrease": 10,
+      "maxAllowed": 90
+    }
+  },
+  "apps": {
+    "bluetooth": "kitty -e bluetui",
+    "network": "nm-connection-editor",
+    "networkEthernet": "kcmshell6 kcm_networkmanagement",
+    "taskManager": "kitty -e btop",
+    "terminal": "kitty -1"
+  },
+  "background": {
+    "fixedClockPosition": false,
+    "clockX": -500,
+    "clockY": -500
+  },
+  "bar": {
+    "bottom": false,
+    "borderless": false,
+    "topLeftIcon": "spark",
+    "showBackground": false,
+    "verbose": true,
+    "resources": {
+      "alwaysShowSwap": false,
+      "alwaysShowCpu": false
+    },
+    "screenList": {},
+    "utilButtons": {
+      "showScreenSnip": true,
+      "showColorPicker": true,
+      "showMicToggle": false,
+      "showKeyboardToggle": true,
+      "showDarkModeToggle": false
+    },
+    "tray": {
+      "monochromeIcons": true
+    },
+    "workspaces": {
+      "shown": 10,
+      "showAppIcons": true,
+      "alwaysShowNumbers": false,
+      "showNumberDelay": 300
+    }
+  },
+  "battery": {
+    "low": 20,
+    "critical": 5,
+    "automaticSuspend": true,
+    "suspend": 3
+  },
+  "dock": {
+    "height": 60,
+    "hoverRegionHeight": 3,
+    "pinnedOnStartup": false,
+    "hoverToReveal": false,
+    "pinnedApps": [
+      "kitty"
+    ]
+  },
+  "networking": {
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+  },
+  "osd": {
+    "timeout": 1000
+  },
+  "osk": {
+    "layout": "qwerty_full",
+    "pinnedOnStartup": false
+  },
+  "overview": {
+    "scale": 0.18,
+    "rows": 2,
+    "columns": 5
+  },
+  "resources": {
+    "updateInterval": 3000
+  },
+  "search": {
+    "nonAppResultDelay": 30,
+    "engineBaseUrl": "https://www.duckduckgo.com/search?q=",
+    "excludedSites": [
+      "quora.com"
+    ],
+    "sloppy": false,
+    "prefix": {
+      "action": "/",
+      "clipboard": ";",
+      "emojis": ":"
+    }
+  },
+  "sidebar": {
+    "translator": {
+      "delay": 300
+    },
+    "booru": {
+      "allowNsfw": false,
+      "defaultProvider": "yandere",
+      "limit": 20,
+      "zerochan": {
+        "username": "[unset]"
+      }
+    }
+  },
+  "time": {
+    "format": "hh:mm",
+    "dateFormat": "dddd, dd/MM"
+  },
+  "windows": {
+    "showTitlebar": true,
+    "centerTitle": true
+  },
+  "hacks": {
+    "arbitraryRaceConditionDelay": 20
+  }
+}
