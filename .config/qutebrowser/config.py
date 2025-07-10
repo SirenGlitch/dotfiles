@@ -38,6 +38,14 @@ config.bind(";M", "hint --rapid links spawn umpv {hint-url}")
 config.bind("sd", "spawn --userscript open_download")
 config.bind("gc", "spawn --userscript gitclone")
 config.bind(";c", "hint code userscript code_select.py")
+config.bind(
+    "<Alt-Shift-u>",
+    "spawn --userscript qute-keepassxc --key 6155CA1D8D9FD0A3",
+    mode="insert",
+)
+config.bind(
+    "pw", "spawn --userscript qute-keepassxc --key 6155CA1D8D9FD0A3", mode="normal"
+)
 
 # spellchecking
 c.spellcheck.languages = ["en-GB"]
