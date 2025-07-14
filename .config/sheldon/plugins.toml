@@ -27,6 +27,9 @@ github = "zsh-users/zsh-completions"
 [plugins.zsh-defer]
 github = "romkatv/zsh-defer"
 
+[plugins.zsh-eza]
+github = "z-shell/zsh-eza"
+
 # For example:
 #
 # [plugins.base16]
