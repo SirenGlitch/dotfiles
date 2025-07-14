@@ -7,13 +7,7 @@ reload_gtk_theme() {
   gsettings set org.gnome.desktop.interface gtk-theme $theme
 }
 
-pywalfox update
 walcord
-
-(cd ~/.cache/wal/ && nohup python3 -m http.server 8080 > /dev/null 2> /dev/null &)
-
-~/scripts/theme_parse pywal > ~/.config/spotify-player/theme.toml
-kill -15 `pgrep -f 'python3 -m http.server 8080'`
 
 ~/scripts/qutebrowser_reload.py
 
