@@ -18,3 +18,5 @@
 
   # colored less
   export LESS="R --use-color -Dd+r -Du+b"
+
+  export RIPGREP_CONFIG_PATH="$HOME/.config/ripgrep/config.rg"
