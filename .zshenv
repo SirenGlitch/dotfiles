@@ -12,7 +12,7 @@
     --bind 'ctrl-/:change-preview-window(down|hidden|)'"
   export FZF_ALT_C_OPTS=" \
     --walker-skip .git,node_modules,target \
-    --preview 'tree -C {}'" 
+    --preview 'eza -T {}'" 
   source "$HOME/.fzf-git.sh/fzf-git.sh"
   export MANPAGER="less -R --use-color -Dd+r -Du+b" # colored man pages
 

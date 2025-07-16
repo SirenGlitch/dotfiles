@@ -76,7 +76,9 @@ eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/base.toml)"
 
 eval "$(zoxide init --cmd cd zsh)"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# Set up fzf keybindings and fuzzy completion
+
+source <(fzf --zsh)
 
 eval "$(atuin init zsh --disable-up-arrow)"
 
