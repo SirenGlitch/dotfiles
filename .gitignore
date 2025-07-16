@@ -1,2 +1,4 @@
 .config/yazi/plugins
 .config/yazi/flavors
+.irssi/certs
+.irssi/otr
