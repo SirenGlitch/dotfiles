@@ -80,8 +80,13 @@ eval "$(zoxide init --cmd cd zsh)"
 
 source <(fzf --zsh)
 
-eval "$(atuin init zsh --disable-up-arrow)"
-
 eval "$(sheldon source)"
 
-fastfetch
+parent_process=$(ps -p $PPID -o comm=)
+
+if [[ $parent_process != "nvim" ]]; then
+  # Don't cloud sync history from neovim
+  eval "$(atuin init zsh --disable-up-arrow)"
+  # Don't run fastfetch from neovim, wastes screen space
+  fastfetch
+fi
