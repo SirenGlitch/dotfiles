@@ -46,6 +46,7 @@ config.bind(
 config.bind(
     "pw", "spawn --userscript qute-keepassxc --key 6155CA1D8D9FD0A3", mode="normal"
 )
+config.bind(",t", "hint links spawn webtorrent --mpv {hint-url}")
 
 # spellchecking
 c.spellcheck.languages = ["en-GB"]
@@ -60,6 +61,7 @@ c.url.searchengines = {
     "!apkg": "https://archlinux.org/packages/?sort=&q={}&maintainer=&flagged=",
     "!ghs": "https://github.com/search?o=desc&q={}&s=stars",
     "!gh": "https://github.com/{}",
+    "!nsi": "https://nyaa.si/?q={}",
     "!yt": "https://www.youtube.com/results?search_query={}",
 }
 
