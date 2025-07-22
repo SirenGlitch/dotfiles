@@ -97,7 +97,8 @@
     {
       "type": "battery",
       "key": "   Battery  ",
-      "keyColor": "cyan"
+      "keyColor": "cyan",
+      "format": "{4} ({12} hours, {13} mins remaining)"
     },
     {
       "type": "custom",
