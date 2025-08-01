@@ -28,6 +28,11 @@ use = "yazi-rs/plugins:piper"
 rev = "de53d90"
 hash = "2143a53182dbbe935a1abd1623424aa5"
 
+[[plugin.deps]]
+use = "lpanebr/yazi-plugins:first-non-directory"
+rev = "ca18a2c"
+hash = "5c20ffa5171dab34042e03d273dddc5b"
+
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-mocha"
 rev = "d3fd3a5"

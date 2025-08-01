@@ -6,3 +6,8 @@ desc = "run lazygit"
 [[mgr.prepend_keymap]]
 on = "M"
 run = "plugin mount"
+
+[[mgr.prepend_keymap]]
+on = [ "f", "j" ]
+run = "plugin first-non-directory"
+desc = "Jumps to the first file"
