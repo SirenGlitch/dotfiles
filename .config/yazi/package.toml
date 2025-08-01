@@ -18,6 +18,16 @@ use = "saumyajyoti/omp"
 rev = "41f7e89"
 hash = "79c7c499488da445c97cc8eb252c3b2a"
 
+[[plugin.deps]]
+use = "yazi-rs/plugins:mount"
+rev = "de53d90"
+hash = "f10a14e823382d90fab5b3ee54cb38fe"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:piper"
+rev = "de53d90"
+hash = "2143a53182dbbe935a1abd1623424aa5"
+
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-mocha"
 rev = "d3fd3a5"
