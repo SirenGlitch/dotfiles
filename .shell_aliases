@@ -8,4 +8,5 @@ cat="bat" \
 cp="cpg -g" \
 mv="mvg -g" \
 sd="(cd ~/.dotfiles && stow .)" \
-lg="lazygit"
+lg="lazygit" \
+qb="qutebrowser"
