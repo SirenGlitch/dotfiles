@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Basically a fzf-enhanced version of yay -Qi <pkgname> | awk '/^URL/ {print $3}' | xargs -r xdg-open
+
+# Opens URL of selected package in default browser
+
+fzf_args=(
+  --preview 'yay -Qi {1} | awk '/^URL/''
+  --color 'pointer:green,marker:green'
+)
+
+pkg=$(yay -Qqe | fzf "${fzf_args[@]}")
+
+if [[ -n "$pkg" ]]; then
+  yay -Qi $pkg | awk '/^URL/ {print $3}' | xargs -r xdg-open &
+fi
